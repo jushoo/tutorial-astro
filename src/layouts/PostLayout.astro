@@ -4,8 +4,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <article class="prose dark:prose-invert">
+  <section>
     <a href="/blog" class="mb-4 text-xl">back</a>
+  </section>
+  <article class="prose dark:prose-invert">
     <slot />
   </article>
 </BaseLayout>

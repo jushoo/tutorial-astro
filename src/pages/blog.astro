@@ -7,21 +7,21 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
 <BaseLayout title={pageTitle}>
-  <article class="prose dark:prose-invert min-w-full">
+  <hgroup>
     <h1>all blog posts</h1>
 
     <p>view all blog posts here</p>
+  </hgroup>
 
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
-      {
-        allPosts.map((post) => (
-          <Card
-            title={post.frontmatter.title}
-            url={post.url!}
-            pubDate={post.frontmatter.pubDate}
-          />
-        ))
-      }
-    </div>
-  </article>
+  <div class="grid">
+    {
+      allPosts.map((post) => (
+        <Card
+          title={post.frontmatter.title}
+          url={post.url!}
+          pubDate={post.frontmatter.pubDate}
+        />
+      ))
+    }
+  </div>
 </BaseLayout>

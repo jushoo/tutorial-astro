@@ -7,7 +7,7 @@ pubDate: 2024-03-07
 tags: ["blogging"]
 ---
 
-# Hello!
+## Hello World
 
 Welcome, this is my first post on this blog!
 Why did I make this blog? Well... I recently landed a job for React/ReactNative

@@ -6,26 +6,26 @@ const allPosts = await Astro.glob("../pages/posts/*.md"); // TODO: Update this t
 ---
 
 <BaseLayout title="home">
-  <article class="prose dark:prose-invert min-w-full">
-    <h1>hello there!</h1>
-    <p>I'm DJ. A random software engineer in the wild</p>
+  <hgroup>
+    <h1>Hello!</h1>
+    <p>I'm DJ,</p>
     <p>
       This site is where I reflect on what im currently learning... or doing.
     </p>
+  </hgroup>
 
-    <h2>recent posts:</h2>
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
-      {
-        allPosts
-          .slice(-4)
-          .map((post) => (
-            <Card
-              title={post.frontmatter.title}
-              url={post.url!}
-              pubDate={post.frontmatter.pubDate}
-            />
-          ))
-      }
-    </div>
-  </article>
+  <h2>recent posts:</h2>
+  <div class="grid">
+    {
+      allPosts
+        .slice(-4)
+        .map((post) => (
+          <Card
+            title={post.frontmatter.title}
+            url={post.url!}
+            pubDate={post.frontmatter.pubDate}
+          />
+        ))
+    }
+  </div>
 </BaseLayout>

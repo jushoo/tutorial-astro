@@ -10,7 +10,7 @@ interface Props {
 const { url, title, pubDate } = Astro.props;
 ---
 
-<a
+<!-- <a
   class="px-4 border min-h-12 hover:bg-purple-100 dark:hover:bg-purple-700"
   href={url}
 >
@@ -18,4 +18,14 @@ const { url, title, pubDate } = Astro.props;
   <p class="text-xs text-slate-700 dark:text-slate-100">
     {format(new Date(pubDate), "MMMM dd, yyyy")}
   </p>
+</a> -->
+<a href={url}>
+  <article>
+    <hgroup>
+      <h3>{title}</h3>
+      <p class="small">
+        {format(new Date(pubDate), "MMMM dd, yyyy")}
+      </p>
+    </hgroup>
+  </article>
 </a>
