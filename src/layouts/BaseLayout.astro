@@ -1,7 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../styles/global.css";
+import "../styles/pico.violet.min.css";
+import "../styles/global.scss";
 
 interface Props {
   title: string;
@@ -10,34 +11,24 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="en" class="bg-white dark:bg-slate-800">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css"
+    /> -->
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title.toLowerCase()}</title>
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
     <script
       defer
       data-domain="denniel.dev"
       src="https://plausible.denniel.dev/js/script.js"></script>
   </head>
   <body>
-    <main
-      class="flex flex-col max-w-screen-lg min-h-screen p-12 mx-auto bg-white dark:bg-slate-800 dark:text-slate-200"
-    >
+    <main class="container">
       <Header />
 
       <div class="flex-grow">

@@ -4,24 +4,24 @@ import Card from "../components/Card.astro";
 
 const allProjects = await Astro.glob("../pages/projects/*.md");
 
-const pageTitle = "projects";
+const pageTitle = "Projects";
 ---
 
 <BaseLayout title={pageTitle}>
-  <article class="prose dark:prose-invert min-w-full">
-    <h1>projects</h1>
+  <hgroup>
+    <h1>Projects</h1>
     <p>mostly empty for now... but it will fill up... eventually. haha.</p>
+  </hgroup>
 
-    <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
-      {
-        allProjects.map((project) => (
-          <Card
-            title={project.frontmatter.title}
-            url={project.url!}
-            pubDate={project.frontmatter.pubDate}
-          />
-        ))
-      }
-    </div>
-  </article>
+  <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+    {
+      allProjects.map((project) => (
+        <Card
+          title={project.frontmatter.title}
+          url={project.url!}
+          pubDate={project.frontmatter.pubDate}
+        />
+      ))
+    }
+  </div>
 </BaseLayout>
